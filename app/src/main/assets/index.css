@@ -1048,8 +1048,18 @@ body {
 }
 
 /* Touch Control Layer styling */
-.android-app .mobile-controls,
-@media (max-width: 900px), (max-height: 600px) {
+.android-app .mobile-controls {
+    display: block !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 500;
+    pointer-events: none; /* Let touches fall through background */
+}
+
+@media (max-width: 900px), (max-height: 600px), (pointer: coarse) {
     .mobile-controls {
         display: block !important;
         position: absolute;

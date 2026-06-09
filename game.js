@@ -903,7 +903,10 @@ class Game {
         const wrapper = document.querySelector(".canvas-wrapper");
         if (!wrapper) return;
 
-        const isMobile = document.documentElement.classList.contains("android-app") || window.innerWidth < 900;
+        const isMobile = document.documentElement.classList.contains("android-app") || 
+                         window.innerWidth < 900 || 
+                         window.innerHeight < 600 || 
+                         window.matchMedia("(pointer: coarse)").matches;
         
         if (isMobile) {
             const targetWidth = 800;
